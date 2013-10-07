@@ -1,0 +1,97 @@
+<html>
+<head>
+	<title>Indy Six Gui</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script type="text/javascript" src="ajaxClass.js"></script>
+	<script src="core.js"></script>
+</head>
+<body>
+
+	<!-- PopUp box play video -->
+	<div id="videoPlayBack">
+		<div id="videoPlayBox">
+			<a href="javascript:void(0)" onClick="closeVideo()">
+				<img id="closeButton" src="img/close.png">
+			</a>
+			<video id="videoPlayer" controls>
+  				<source id="videoMp4" src="" type="video/mp4">
+  				<source id="videoOgg" src="" type="video/ogg">
+ 				HTML video tag is not supported in your browser!
+			</video>
+		</div>
+	</div>
+
+	<!-- PopUp box add video -->
+	<div id="addVideoBack">
+		<div id="addVideoBox">
+			<a href="javascript:void(0)" onClick="closeAddVideo()">
+				<img id="closeButton" src="img/close.png">
+			</a>
+			<input type="text" id="addVideoInput" placeholder="Your username" />
+			<div>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('1')">1</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('2')">2</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('3')">3</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('4')">4</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('5')">5</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('6')">6</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('7')">7</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('8')">8</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('9')">9</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('0')">0</a>
+			</div>
+			<div>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('a')">a</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('b')">b</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('c')">c</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('d')">d</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('e')">e</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('f')">f</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('g')">g</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('h')">h</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('i')">i</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('j')">j</a>
+			</div>
+
+			<div>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('k')">k</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('l')">l</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('m')">m</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('n')">n</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('o')">o</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('p')">p</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('q')">q</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('r')">r</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('s')">s</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('t')">t</a>
+			</div>
+
+			<div>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('u')">u</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('v')">v</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('w')">w</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('x')">x</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('y')">y</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('z')">z</a>
+				<a id="keyButton" href="javascript:void(0)" onClick="pressKey('_')">_</a>
+				<a id="keyButton" class="keyBackspace" href="javascript:void(0)" onClick="pressBackspace()">&#8592;</a>
+				<a id="keyButton" class="keyClear" href="javascript:void(0)" onClick="pressClear()">&#9114;</a>
+				<a id="keyButton" class="keySend" href="javascript:void(0)" onClick="pressEnter()">&#9166;</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="videos">
+		<!-- <div class="video" id="video_1">
+			<div class="videoImgContainer">
+				<a href="#" onClick="playVideo('movie_1')">
+					<img class="videoImg" src="movies/screencap/movie_1.png">
+					<img class="playButton" src="play_button.png">
+				</a>
+			</div>
+			<a class="addButton" onClick="addButtonVideo('video_1')" href="#">Add Video</a>
+		</div> -->
+	</div>
+</body>
+</html>
