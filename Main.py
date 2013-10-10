@@ -8,7 +8,7 @@ camera_port 	= 0
 video_time 		= 5
 
 # video file
-video_save_path = "/home/maikel/Documents/movies/"
+video_save_path = "/opt/lampp/htdocs/webApp/movies"
 
 #Serial port
 serial_port 	= "/dev/ttyACM0"
