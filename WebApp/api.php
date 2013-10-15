@@ -37,7 +37,7 @@ function baseUrl($uri = "") {
  //  		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$reqPath.'/'.$uri;
  // 	}
  //	return $pageURL;
-	return "http://localhost/projecten/indysix_gui/".$uri;
+	return "http://localhost/webApp/".$uri;
 }
 
 #Check if request has a valid apikey.

@@ -57,7 +57,7 @@ function getvideos(){
 		return;
 	gettingVideos = false;
 
-	ajaxObject = new ajax('http://localhost/projecten/indysix_gui/api.php');
+	ajaxObject = new ajax('http://localhost/webApp/api.php');
 	ajaxObject.isPost = false;
 	ajaxObject.addParam("movies","");
 	ajaxObject.addParam("apikey","indysix1337");	
@@ -196,7 +196,7 @@ function pressClear(){
 function pressEnter(){
 	var input = document.getElementById("addVideoInput");
 
-	ajaxObject = new ajax('http://localhost/projecten/indysix_gui/api.php?apikey=indysix1337');
+	ajaxObject = new ajax('http://localhost/webApp/api.php?apikey=indysix1337');
 	ajaxObject.isPost = true;
 	ajaxObject.addParam("addmovie",openVideoName);
 	ajaxObject.addParam("username",input.value);
