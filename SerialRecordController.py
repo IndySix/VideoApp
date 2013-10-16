@@ -15,6 +15,10 @@ class SerialRecordController:
 	recordTime 			= 0
 	# Video record start time
 	startRecordTime 	= 0
+	# Detect time
+	detectTime			= 0
+	# deriction
+	direction			= 'R'
 
 	def __init__(self, serialPort, cameraPort, videoSaveLocation, recordTime):
 		self.serial 		= serial.Serial(serialPort, 9600, timeout=1)
@@ -24,18 +28,31 @@ class SerialRecordController:
 		self.oldSerialValue = self.serial.readline().split(':')
 
 	def RecordCheck(self):
-		new_value 	= self.serial.readline().split(':')
-		old_dist 	= int(self.oldSerialValue[0])
-		new_dist 	= int(new_value[0])
-		time_dif 	= (int(new_value[1])) - self.startRecordTime
+		new_value 		= self.serial.readline().split(':')
+		left_old_dist 	= int(self.oldSerialValue[1])
+		left_new_dist 	= int(new_value[1])
+		right_old_dist 	= int(self.oldSerialValue[2])
+		right_new_dist 	= int(new_value[2])
+		time_dif 		= (int(new_value[0])) - self.startRecordTime
+		detectTime_dif 	= (int(new_value[0])) - self.detectTime
 		self.oldSerialValue = new_value
-		print(new_value)
-		if(new_dist < old_dist and old_dist-new_dist > 40 and time_dif > self.recordTime):
-			print("Start webcam old distance: "+str(old_dist)+"; new distance: "+str(new_dist))
-			self.startRecordTime = int(new_value[1]);
-			return True
-		else:
-			return False
+
+		if(time_dif > self.recordTime):
+			if(self.direction == 'L'):
+				if(left_new_dist < left_old_dist and left_old_dist-left_new_dist > 40 and detectTime_dif > 250):
+					self.detectTime = int(new_value[0]);
+				if(right_new_dist < right_old_dist and right_old_dist-right_new_dist > 40 and detectTime_dif < 250):
+					print("Left")
+					self.startRecordTime = int(new_value[1]);
+					return True
+			if(self.direction == 'R'):
+				if(right_new_dist < right_old_dist and right_old_dist-right_new_dist > 40 and detectTime_dif > 250):
+					self.detectTime = int(new_value[0]);
+				if(left_new_dist < left_old_dist and left_old_dist-left_new_dist > 40 and detectTime_dif < 250):
+					print("Right")
+					self.startRecordTime = int(new_value[1]);
+					return True
+		return False
 
 	def run(self):
 		while True:
