@@ -5,8 +5,8 @@
 // #       Pin 6 COMP/TRIG (URM V3.2) -> Pin 5 (Arduino)
 // # DistanceSensor sensor(<Pin 4 PWM>,<Pin 6 COMP>);
 #include "DistanceSensor.h"
-DistanceSensor sensorL(3,5); 	//Sensor L pin 3 en 5
-DistanceSensor sensorR(10,12); 	// Sensor R pin 5 en 6
+DistanceSensor sensorL(10,11); 	//Sensor L pin 3 en 5
+DistanceSensor sensorR(12,13); 	// Sensor R pin 5 en 6
 
 void setup(){   
   Serial.begin(9600);
